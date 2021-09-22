@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("./partials/head.ejs") %>
+<body>
+    <%- include("./partials/header.ejs") %>
+    <div class="container main">
+        <div class="show-div">
+            <h2><%= pokemon.name %></h2>
+            <img class="show-img" src=<%= pokemon.img %> alt="">
+            <h4>Hit Points: <%= pokemon.stats.hp %></h4>
+            <h4>Attack: <%= pokemon.stats.attack %></h4>
+            <h4>Defense: <%= pokemon.stats.defense %></h4>
+        </div>
+    </div>
+    <%- include("./partials/footer.ejs") %>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("./partials/head.ejs") %>
+<body>
+    <%- include("./partials/header.ejs") %>
+    <div class="container main">
+        <h1>Check Out 20 Random Pokemon</h1>
+        <div class="slides">
+            <% for(let i = 0; i < 20; i++) {%>
+
+            <div class="card">
+                <div class="name-div"><%= randomPokemon[i].name %></div>
+                <div class="thumbnail">
+                    <a href="/pokemon/<%= randomPokemon[i].id %>"><img class="index-thumb" src=<%= randomPokemon[i].img %> alt="Pokemon Thumbnail"></a>
+                </div>
+                <div class="details-link"><a href="/pokemon/<%= randomPokemon[i].id %>">Details</a></div>
+                
+            </div>
+            <%}%>
+        </div>
+    </div>
+    <%- include("./partials/footer.ejs") %>
+</body>
+</html>
