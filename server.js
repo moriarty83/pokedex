@@ -47,10 +47,11 @@ app.get('/pokemon/new', (req, res)=>{
 app.post('/pokemon', (req, res)=>{
     console.log(req.body);
     const newID = 1+(+pokemons[pokemons.length-1].id);
-    console.log(newID);
+
     const newPokemon = {'id': String(newID),
         name: req.body.name,
         img: req.body.url, 
+        type: [req.body.type1, req.body.type2],
         stats: {
             hp: String(req.body.hp),
             attack: String(req.body.attack),

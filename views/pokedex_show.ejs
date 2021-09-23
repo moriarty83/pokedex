@@ -21,6 +21,7 @@
                         <h4>Hit Points: <%= pokemon.stats.hp %></h4>
                         <h4>Attack: <%= pokemon.stats.attack %></h4>
                         <h4>Defense: <%= pokemon.stats.defense %></h4>
+                        <h4 style="overflow-wrap: normal; height: 3em;">Type: <%= pokemon.type[0] %>, <%= pokemon.type[1]%></h4>
                     </div>
                 </div>
 
@@ -29,10 +30,11 @@
 
         </div>
         <div class="button-container">
-            <div class="button"><a class = "button nav-link" href="/pokemon/<%= pokemon.id %>/edit">Edit</a></div>
-            <form action="/pokemon/<%= pokemon.id %>?_method=DELETE" method="POST">
-            <button type="submit" onclick="return validate()">Delete</button>
-            </form>     
+            <form class="button nav-link"action="/pokemon/<%= pokemon.id %>?_method=DELETE" method="POST">
+                <button style="cursor: pointer;" class="button nav-link" type="submit" onclick="return validate()">Delete</button>
+            </form>    
+            <a class = "button nav-link" href="/pokemon/<%= pokemon.id %>/edit">Edit</a>
+             
         </div>
     </div>
     <%- include("./partials/footer.ejs") %>
