@@ -1,5 +1,6 @@
 const express = require('express');
 const methodOverride = require('method-override');
+const { indexOf } = require('./models/pokemon.js');
 const app = express();
 const port = 3001;
 
@@ -78,14 +79,17 @@ app.put('/pokemon/:id', (req, res)=>{
     res.redirect('/pokemon/' + req.params.id)
 })
 // Destroy
-
 // DELETE /pokemon/:id
+app.delete('/pokemon/:id', (req, res)=>{
+    const indexToDelete = pokemons.indexOf(pokemons.find(o => o.id === req.params.id));
+    pokemons.splice(indexToDelete, 1)
+    res.redirect('/pokemon')
+})
 
 // Show
 // GET /pokemon/:id
 app.get('/pokemon/:id', (req, res)=>{
     let pokemon = pokemons.find(o => o.id === req.params.id)
-    console.log(pokemon);
     res.render('pokedex_show.ejs', {'pokemon': pokemon})
 })
 

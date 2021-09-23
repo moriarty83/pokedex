@@ -5,19 +5,25 @@
     <%- include("./partials/header.ejs") %>
     
     <div class="container main">
-        <div class="show-div">
-            <form action="/pokemon/<%= pokemon.id %>?_method=PUT" method="POST">
-                <h2>Name: <input type="text" name="name" id="" value="<%= pokemon.name %>"></h2>
-                <br>
-                <img class="show-img" src=<%= pokemon.img %> alt=""><br>
-                <label for="ulr">Image URL</label>
-                <input type="url" name="url" id="" value="<%= pokemon.img %>"><br><br>
+        <div class="info-div">
+            <div class="edit-card">
+                <img class="show-img" src=<%= pokemon.img %> alt="">    
+            </div>
+            <div class="edit-card">
+                
+                <form class="edit-form" action="/pokemon/<%= pokemon.id %>?_method=PUT" method="POST">
+                    <h2>Name: <input type="text" name="name" id="" value="<%= pokemon.name %>"></h2>
+                    <br>
+                    
+                    <label for="ulr">Image URL</label>
+                    <input type="url" name="url" id="" value="<%= pokemon.img %>"><br><br>
 
-                <h4>Hit Points: <input type="number" name="hp" id="" value="<%= pokemon.stats.hp %>"></h4>
-                <h4>Attack: <input type="number" name="attack" id="" value="<%= pokemon.stats.attack %>"></h4>
-                <h4>Defense: <input type="number" name="defense" value="<%= pokemon.stats.defense %>"></h4>
-                <input type="submit" value="Submit">
-            </form>
+                    <h4>Hit Points: <input type="number" name="hp" id="" value="<%= pokemon.stats.hp %>"></h4>
+                    <h4>Attack: <input type="number" name="attack" id="" value="<%= pokemon.stats.attack %>"></h4>
+                    <h4>Defense: <input type="number" name="defense" value="<%= pokemon.stats.defense %>"></h4>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
         </div>
     </div>
 

@@ -1,17 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include("./partials/head.ejs") %>
+<script>
+
+    function validate() {
+        return confirm('Do you really want delete <%= pokemon.name %>?');
+    }
+    </script>
 <body>
     <%- include("./partials/header.ejs") %>
     <div class="container main">
         <div class="show-div">
-            <h2><%= pokemon.name %></h2>
-            <img class="show-img" src=<%= pokemon.img %> alt="">
-            <h4>Hit Points: <%= pokemon.stats.hp %></h4>
-            <h4>Attack: <%= pokemon.stats.attack %></h4>
-            <h4>Defense: <%= pokemon.stats.defense %></h4>
+            <h2 style="text-align: center;"><%= pokemon.name %></h2>
+            <div class="info-div">
+                <div class="show-card">
+                    <img class="show-img" src=<%= pokemon.img %> alt="">
+                </div>
+                <div class="show-card" >
+                    <div class="show-stats">
+                        <h4>Hit Points: <%= pokemon.stats.hp %></h4>
+                        <h4>Attack: <%= pokemon.stats.attack %></h4>
+                        <h4>Defense: <%= pokemon.stats.defense %></h4>
+                    </div>
+                </div>
+
+            </div>
+            
+
+        </div>
+        <div class="button-container">
+            <div class="button"><a class = "nav-link" href="/pokemon/<%= pokemon.id %>/edit">Edit</a></div>
+            <form action="/pokemon/<%= pokemon.id %>?_method=DELETE" method="POST">
+            <button type="submit" onclick="return validate()">Delete</button>
+            </form>     
         </div>
     </div>
     <%- include("./partials/footer.ejs") %>
+    
 </body>
 </html>

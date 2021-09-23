@@ -7,23 +7,23 @@
         <h1>Create a New Pokemon</h1>
         <form action="/pokemon" method="POST">
             <label for="name">Name</label>
-            <input type="text" name="name" id=""><br><br>
+            <input type="text" name="name" id="" required><br><br>
 
             <label for="ulr">Image URL</label>
-            <input type="url" name="url" id=""><br><br>
+            <input type="url" name="url" id="" required><br><br>
 
             <label for="hp">Hit Points</label>
-            <input type="number" name="hp" id=""><br><br>
+            <input type="number" name="hp" id="" required><br><br>
 
             <label for="attack">Attack</label>
-            <input type="number" name="attack" id=""><br><br>
+            <input type="number" name="attack" id="" required><br><br>
 
             <label for="defense">Defense</label>
-            <input type="number" name="defense" id=""><br><br>
+            <input type="number" name="defense" id=" required"><br><br>
 
 
             <label for="type1">Type 1</label>
-            <select name="type1" id="cars">
+            <select name="type1" id="" required>
                 <option value="normal">Normal</option>
                 <option value="fighting">Fighting</option>
                 <option value="flying">flying</option>
@@ -45,7 +45,7 @@
             </select>
             
             <label for="type2">Type 2</label>
-            <select name="type2" id="cars">
+            <select name="type2" id="" required>
                 <option value="normal">Normal</option>
                 <option value="fighting">Fighting</option>
                 <option value="flying">flying</option>
