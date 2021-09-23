@@ -29,7 +29,7 @@
 
         </div>
         <div class="button-container">
-            <div class="button"><a class = "nav-link" href="/pokemon/<%= pokemon.id %>/edit">Edit</a></div>
+            <div class="button"><a class = "button nav-link" href="/pokemon/<%= pokemon.id %>/edit">Edit</a></div>
             <form action="/pokemon/<%= pokemon.id %>?_method=DELETE" method="POST">
             <button type="submit" onclick="return validate()">Delete</button>
             </form>     

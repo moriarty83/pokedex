@@ -5,71 +5,72 @@
     <%- include("./partials/header.ejs") %>
     <div class="container main">
         <h1>Create a New Pokemon</h1>
-        <form action="/pokemon" method="POST">
-            <label for="name">Name</label>
-            <input type="text" name="name" id="" required><br><br>
+        <div class="create-card">
+            <form class="input-form" action="/pokemon" method="POST">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="" required><br><br>
 
-            <label for="ulr">Image URL</label>
-            <input type="url" name="url" id="" required><br><br>
+                <label for="ulr">Image URL</label>
+                <input type="url" name="url" id="" required><br><br>
 
-            <label for="hp">Hit Points</label>
-            <input type="number" name="hp" id="" required><br><br>
+                <label for="hp">Hit Points</label>
+                <input type="number" name="hp" id="" required><br><br>
 
-            <label for="attack">Attack</label>
-            <input type="number" name="attack" id="" required><br><br>
+                <label for="attack">Attack</label>
+                <input type="number" name="attack" id="" required><br><br>
 
-            <label for="defense">Defense</label>
-            <input type="number" name="defense" id=" required"><br><br>
+                <label for="defense">Defense</label>
+                <input type="number" name="defense" id=" required"><br><br>
 
 
-            <label for="type1">Type 1</label>
-            <select name="type1" id="" required>
-                <option value="normal">Normal</option>
-                <option value="fighting">Fighting</option>
-                <option value="flying">flying</option>
-                <option value="poison">Poison</option>
-                <option value="ground">Ground</option>
-                <option value="rock">Rock</option>
-                <option value="bug">Bug</option>
-                <option value="ghost">Ghost</option>
-                <option value="steel">Steel</option>
-                <option value="fire">Fire</option>
-                <option value="water">Water</option>
-                <option value="grass">Grass</option>
-                <option value="electric">Electric</option>
-                <option value="psychic">Psychic</option>
-                <option value="ice">Ice</option>
-                <option value="dragon">Dragon</option>
-                <option value="dark">Dark</option>
-                <option value="fairy">Fairy</option>
-            </select>
-            
-            <label for="type2">Type 2</label>
-            <select name="type2" id="" required>
-                <option value="normal">Normal</option>
-                <option value="fighting">Fighting</option>
-                <option value="flying">flying</option>
-                <option value="poison">Poison</option>
-                <option value="ground">Ground</option>
-                <option value="rock">Rock</option>
-                <option value="bug">Bug</option>
-                <option value="ghost">Ghost</option>
-                <option value="steel">Steel</option>
-                <option value="fire">Fire</option>
-                <option value="water">Water</option>
-                <option value="grass">Grass</option>
-                <option value="electric">Electric</option>
-                <option value="psychic">Psychic</option>
-                <option value="ice">Ice</option>
-                <option value="dragon">Dragon</option>
-                <option value="dark">Dark</option>
-                <option value="fairy">Fairy</option>
-            </select>
-            <br><br>
-            <input type="submit" value="Submit">
+                <label for="type1">Type 1</label>
+                <select name="type1" id="" required>
+                    <option value="normal">Normal</option>
+                    <option value="fighting">Fighting</option>
+                    <option value="flying">flying</option>
+                    <option value="poison">Poison</option>
+                    <option value="ground">Ground</option>
+                    <option value="rock">Rock</option>
+                    <option value="bug">Bug</option>
+                    <option value="ghost">Ghost</option>
+                    <option value="steel">Steel</option>
+                    <option value="fire">Fire</option>
+                    <option value="water">Water</option>
+                    <option value="grass">Grass</option>
+                    <option value="electric">Electric</option>
+                    <option value="psychic">Psychic</option>
+                    <option value="ice">Ice</option>
+                    <option value="dragon">Dragon</option>
+                    <option value="dark">Dark</option>
+                    <option value="fairy">Fairy</option>
+                </select>
+                
+                <label for="type2">Type 2</label>
+                <select name="type2" id="" required>
+                    <option value="normal">Normal</option>
+                    <option value="fighting">Fighting</option>
+                    <option value="flying">flying</option>
+                    <option value="poison">Poison</option>
+                    <option value="ground">Ground</option>
+                    <option value="rock">Rock</option>
+                    <option value="bug">Bug</option>
+                    <option value="ghost">Ghost</option>
+                    <option value="steel">Steel</option>
+                    <option value="fire">Fire</option>
+                    <option value="water">Water</option>
+                    <option value="grass">Grass</option>
+                    <option value="electric">Electric</option>
+                    <option value="psychic">Psychic</option>
+                    <option value="ice">Ice</option>
+                    <option value="dragon">Dragon</option>
+                    <option value="dark">Dark</option>
+                    <option value="fairy">Fairy</option>
+                </select>
+                <br><br>
+                <input type="submit" value="Submit">
 
-        </form>
-
+            </form>
+        </div>
     </div>
 
     <%- include("./partials/footer.ejs") %>

@@ -24,6 +24,7 @@ app.use(methodOverride('_method'));
 // Index
 // GET /pokemon
 app.get('/pokemon', (req, res)=>{
+
     // Subset array
     const subset = [];
 
@@ -31,14 +32,14 @@ app.get('/pokemon', (req, res)=>{
     for(let i = 0; i < 20; i ++){
         subset.push(pokemons[Math.floor(Math.random()*pokemons.length)])
     }
-    res.render('pokedex_index.ejs', {'randomPokemon':subset})
+    res.render('pokedex_index.ejs', {'randomPokemon':subset, 'featured':getFeatured()})
 })
 
 
 // New
 // GET /pokemon/new
 app.get('/pokemon/new', (req, res)=>{
-    res.render('pokedex_new.ejs')
+    res.render('pokedex_new.ejs', {'featured':getFeatured()})
 })
 
 // Create
@@ -47,7 +48,7 @@ app.post('/pokemon', (req, res)=>{
     console.log(req.body);
     const newID = 1+(+pokemons[pokemons.length-1].id);
     console.log(newID);
-    let newPokemon = {'id': String(newID),
+    const newPokemon = {'id': String(newID),
         name: req.body.name,
         img: req.body.url, 
         stats: {
@@ -62,7 +63,7 @@ app.post('/pokemon', (req, res)=>{
 // GET /pokemon/:id/edit
 app.get('/pokemon/:id/edit', (req, res)=>{
     let pokemon = pokemons.find(o => o.id === req.params.id)
-    res.render('pokedex_edit.ejs', {'pokemon': pokemon})
+    res.render('pokedex_edit.ejs', {'pokemon': pokemon, 'featured':getFeatured()})
 })
 
 // Update
@@ -90,7 +91,7 @@ app.delete('/pokemon/:id', (req, res)=>{
 // GET /pokemon/:id
 app.get('/pokemon/:id', (req, res)=>{
     let pokemon = pokemons.find(o => o.id === req.params.id)
-    res.render('pokedex_show.ejs', {'pokemon': pokemon})
+    res.render('pokedex_show.ejs', {'pokemon': pokemon, 'featured':getFeatured()})
 })
 
 ///////////////////////
@@ -99,3 +100,11 @@ app.get('/pokemon/:id', (req, res)=>{
 app.listen(port, (req, res)=>{
     console.log("Hello Seattle, I'm listening on port " + port);
 })
+
+function getFeatured(){ 
+    // Random Pokemon ID
+    const date = new Date();
+    const dateString = date.getYear().toString() + date.getMonth().toString() + + date.getDate().toString();
+    featuredIndex = +dateString%pokemons.length+1;
+    return featuredIndex;
+}
