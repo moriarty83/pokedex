@@ -2,7 +2,7 @@ const express = require('express');
 const methodOverride = require('method-override');
 const { indexOf } = require('./models/pokemon.js');
 const app = express();
-const port = 3001;
+const port = 3000;
 
 ///////////////////////
 // MODELS
